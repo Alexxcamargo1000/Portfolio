@@ -1,6 +1,6 @@
 @import url('https://fonts.googleapis.com/css2?family=Galada&family=Roboto:wght@400;700&display=swap');
 :root {
-    --title: #3b3c4a;
+    --title: #0065FF;
     --text-title: 'Galada', cursive;
 }
 
@@ -84,7 +84,7 @@ section {
 }
 
 section div.parallax {
-    background-image: url("../img/bg.jpg");
+    background-image: url("../img/fundo.svg");
     object-fit: cover;
     height: 100%;
     width: 100%;
@@ -106,6 +106,7 @@ section div.parallax h1 {
     ;
     -webkit-text-stroke-color: rgb(0, 0, 0)/* cor da borda */
     ;
+    display: none;
 }
 
 section div.parallax h4 {
@@ -118,6 +119,7 @@ section div.parallax h4 {
     -webkit-text-stroke-color: rgb(0, 0, 0)/* cor da borda */
     ;
     font-weight: 400;
+    display: none;
 }
 
 @media only screen and (max-device-width: 1366px) {
@@ -129,6 +131,7 @@ section div.parallax h4 {
 
 section#p {
     flex-direction: column;
+    height: auto;
 }
 
 section#p h1 {
@@ -179,8 +182,8 @@ div.row {
     width: 90%;
     background-color: black;
     display: grid;
-    grid-template-rows: 1fr 1fr;
     grid-template-columns: 1fr 1fr 1fr;
+    grid-template-rows: 300px 300px 300px;
     margin: 0 auto;
     gap: 32px;
 }
@@ -192,6 +195,7 @@ div.item {
     position: relative;
     border-radius: 30px;
     max-height: 350px;
+    max-width: 400px;
     height: 100%;
     width: 100%;
     display: flex;
@@ -285,6 +289,7 @@ div.sobre div.itemSobre div.text {
 
 div.sobre div.itemSobre div.text p {
     line-height: 24px;
+    font-size: 17px;
 }
 div.sobre div.itemSobre div.text h1 {
     text-align: center;
@@ -299,7 +304,7 @@ div.sobre div.itemSobre div.text ul.formacao li{
     list-style: none;
 }
 div.sobre div.itemSobre div.text ul.formacao li b{
-    color: chocolate;
+    color: #0065FF;
 }
 ul.sociais {
     display: flex;
@@ -390,8 +395,8 @@ ul.sociais a.social span.insta {
 /*menu mobal*/
 
 @media (max-width:900px) {
-    div.parallax{
-        background-image: none !important;
+    section div.parallax{
+        background-image: url("../img/fundoTablet.svg")
     }
     section div.parallax h1 {
         -webkit-text-stroke-width: 0px;
@@ -436,6 +441,7 @@ ul.sociais a.social span.insta {
         display: flex;
         flex-direction: column;
         margin: 40px 0;
+        max-width: 100%;
         max-height: 400px;
     }
     div.item:hover img {
@@ -476,9 +482,8 @@ ul.sociais a.social span.insta {
 }
 
 @media (max-width:600px) {
-    div.parallax{
-        background-image: none !important;
-        height: auto !important;
+    section div.parallax{
+        background-image: url("../img/fundoMobal.svg")
     }
     section#home{
         height: 100px !important;
@@ -502,9 +507,12 @@ ul.sociais a.social span.insta {
     div.row div.item{
         margin:0
     }
+    .skills{
+        margin: 0 auto;
+    }
     .skills ul{
         grid-template-columns: 1fr 1fr;
-        grid-template-rows: 1fr 1fr 1fr;
+        grid-template-rows: 1fr 1fr 1fr 1fr;
     }
 }
 
@@ -541,7 +549,7 @@ ul.sociais a.social span.insta {
 }
 
 [data-anime="top"] {
-    transform: translate3d(0, -100px, 0);
+    transform: translate3d(0, 100px, 0);
 }
 
 [data-anime="top"].anima {
